@@ -36,6 +36,61 @@ Running test
 npm test
 ```
 
+# Docker
+
+## .env
+TBD
+
+## Database MySQL container
+
+```
+docker-compose up
+```
+
+### Troubleshoot
+
+```
+sudo ss -natpl | grep 3306
+```
+Should list the service having a TCP sock listener
+If not, something is wrong.
+
+if you have mysql client locally
+```
+mysql -h0.0.0.0 -utrendusr -p
+```
+
+Check if db container is running 
+```
+docker-compose ps
+```
+
+### Use mysql shell as root
+
+```
+docker-compose exec db bash
+mysql -uroot -p
+```
+
+### Initial setup
+
+Call these commands in mysql shell as root inside container
+
+```
+ALTER USER 'trendusr'@'%' IDENTIFIED WITH mysql_native_password BY 'userexample';
+```
+
+Allow access to the database
+
+```
+use trendapp
+grant ALL PRIVILEGES ON *.* TO 'trendusr';
+```
+
+**Note**: don't do this on production, make sure
+you allow only grant selected PRIVILEGES bare
+to use the app.
+
 # IDE settings
 
 ## WebStorm
