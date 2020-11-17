@@ -31,6 +31,7 @@ function generateFakeInvoices(count, conditions) {
             dueOn: faker.date.recent('90'),
             createdAt: faker.date.recent('90'),
             updatedAt: new Date(), // now
+            external_id: null,
         }
         items.push(newItem)
     }
