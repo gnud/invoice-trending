@@ -80,6 +80,12 @@ Call these commands in mysql shell as root inside container
 ALTER USER 'trendusr'@'%' IDENTIFIED WITH mysql_native_password BY 'userexample';
 ```
 
+Create test database
+
+```
+create database trendapp_test
+```
+
 Allow access to the database
 
 ```
