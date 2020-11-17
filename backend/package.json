@@ -5,7 +5,7 @@
   "scripts": {
     "start": "node ./bin/www",
     "test": "sequelize-cli db:seed:undo:all --env test && sequelize-cli db:migrate && sequelize-cli db:seed:all  --debug --env test --seeders-path seeders && jest",
-    "test:db:reset": "sequelize-cli db:seed:undo:all --env test && sequelize-cli db:migrate && sequelize-cli db:seed:all  --debug --env test --seeders-path seeders"
+    "test:db:reset": "sequelize-cli db:seed:undo --env test && sequelize-cli db:seed:undo:all --env test && sequelize-cli db:migrate --env test && sequelize-cli db:seed:all --debug --env test --seeders-path seeders"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
