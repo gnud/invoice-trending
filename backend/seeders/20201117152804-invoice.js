@@ -32,6 +32,7 @@ function generateFakeInvoices(count, conditions) {
             createdAt: faker.date.recent('90'),
             updatedAt: new Date(), // now
             external_id: null,
+            sellPrice: faker.random.number(),
         }
         items.push(newItem)
     }

@@ -12,7 +12,8 @@ module.exports = (sequelize, DataTypes) => {
     }
     Invoice.init({
         amount: DataTypes.INTEGER,
-        dueOn: DataTypes.DATE
+        dueOn: DataTypes.DATE,
+        sellPrice: DataTypes.INTEGER,
     }, {
         sequelize,
         modelName: 'Invoice',
