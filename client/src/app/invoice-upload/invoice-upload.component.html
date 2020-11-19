@@ -1,0 +1,56 @@
+<div *ngIf="!resultsMode">
+  <h2>Upload your CSV invoice</h2>
+
+  <div class="upload-legend">
+    <p><strong>Rules</strong>: <small>CSV must consist of a header row with columns:</small></p>
+    <p><small>"id(int), amount(int), dueOn(date string)"</small></p>
+    <p><small>Each exception to the rules will result in skipping the erroneous row.</small></p>
+    <p><small>In the end a report of skipped rows will be presented.</small></p>
+  </div>
+
+  <form enctype="multipart/form-data" method="post">
+    <div>
+      <label for="picked">Choose file to upload</label>
+      <div>
+        <input type="file" id="picked" #picked accept="text/csv"
+               (click)="message=''"
+               (change)="onPicked(picked)"
+        >
+      </div>
+    </div>
+  </form>
+</div>
+
+<div *ngIf="resultsMode">
+  <h2>Check CSV upload results</h2>
+
+<div class="col col-xs-3">
+  <div class="table-tbody-scroll">
+    <table class="table pd-b-5">
+      <thead>
+      <tr>
+        <th>#</th>
+        <th>Due On</th>
+        <th>Amount</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let item of results">
+        <th class="badge">
+          {{ item.value.id }}
+          <input type="checkbox" disabled [checked]="!item.errors.idValid" title="Id field is invalid"/>
+        </th>
+        <td>
+          {{ item.value.dueOn | date }}
+          <input type="checkbox" disabled [checked]="!item.errors.dueONValid" title="Due ON field is invalid"/>
+        </td>
+        <td class="column-price">
+          {{ item.value.amount }}
+          <input type="checkbox" disabled [checked]="!item.errors.amountValid" title="Amount field is invalid"/>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+</div>
