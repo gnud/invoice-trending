@@ -1,0 +1,12 @@
+ul {
+  display: inline-flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+ul li {
+  flex-grow: 0.06;
+  flex-basis: min-content;
+}
