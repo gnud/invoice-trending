@@ -1,6 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { InvoiceUploadComponent } from './invoice-upload.component';
+import {HttpErrorHandler} from '../http-error-handler.service';
+import {MessageService} from '../messages/message.service';
+import {HttpClientTestingModule} from '@angular/common/http/testing';
 
 describe('InvoiceUploadComponent', () => {
   let component: InvoiceUploadComponent;
@@ -8,7 +11,14 @@ describe('InvoiceUploadComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ InvoiceUploadComponent ]
+      imports: [
+        HttpClientTestingModule,
+      ],
+      declarations: [ InvoiceUploadComponent ],
+      providers: [
+        HttpErrorHandler,
+        MessageService,
+      ]
     })
     .compileComponents();
   }));
