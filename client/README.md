@@ -10,7 +10,7 @@ git clone https://github.com/gnud/invoice-trending.git
 cd client
 ```
 
-Install [nvm](https://github.com/nvm-sh/nvm) first, to manage seveal node engines.
+Install [nvm](https://github.com/nvm-sh/nvm) first, to manage several node engines.
 (or use [asdf](https://github.com/asdf-vm/asdf))
 
 ```
