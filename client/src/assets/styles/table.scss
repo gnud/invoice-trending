@@ -1,0 +1,45 @@
+.table {
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 1rem;
+  background-color: transparent;
+  border-collapse: collapse;
+}
+
+.table thead th {
+  vertical-align: bottom;
+  border-bottom: 2px solid #dee2e6;
+}
+
+.table td, .table th {
+  padding: .75rem;
+  vertical-align: top;
+  border-top: 1px solid #dee2e6;
+}
+
+thead th {
+  background: rgba(255, 255, 255, 10);;
+}
+
+
+.table-tbody-scroll {
+  max-height: 325px;
+  overflow-y: scroll;
+
+  .table {
+    position: relative;
+    border-collapse: separate;
+    border-spacing: 0;
+
+    thead th {
+      position: sticky;
+      top: 0;
+    }
+  }
+}
+
+.column-price {
+  padding-left: 10px;
+  text-align: center;
+  max-width: 10vh;
+}
